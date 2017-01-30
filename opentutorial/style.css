@@ -1,0 +1,22 @@
+body{
+    margin:0;
+}
+body.black{
+    background-color: black;
+    color:white;
+}
+header{
+    border-bottom: 1px solid grey;
+    padding-left: 30px;
+}
+nav{
+    border-right: 1px solid grey;
+    width: 200px;
+    height: 700px;
+    float: left;
+}
+
+#vote {
+    border:none        
+/* 배경을 투명하게 할경우에는 background-color: transparent; */
+}
