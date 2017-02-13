@@ -1,0 +1,31 @@
+<html><head><title>YUI XML Example</title>
+</head><body>
+<h2>Loading XML content into a DIV with YUI</h2>
+<div id='info'>This sentence will be replaced</div>
+<script src="yahoo-min.js"></script> 
+<script src="event-min.js"></script> 
+<script src="connection-min.js"></script> 
+<script>
+url = encodeURI("xml.weather.yahoo.com/forecastrss?p=20500")
+callback = { success:successHandler, failure:failureHandler }
+request = YAHOO.util.Connect.asyncRequest('GET',
+	'xmlget.php?url=' + url, callback)
+
+function successHandler(o) {
+	root = o.responseXML.documentElement;
+	title = root.getElementsByTagName('description')[0].
+		firstChild.nodeValue
+	date = root.getElementsByTagName('lastBuildDate')[0].
+		firstChild.nodeValue
+	text = root.getElementsByTagName('description')[1].
+		firstChild.nodeValue
+
+	document.getElementById('info').innerHTML =
+		title + "<br />" + date + "<br />" + text
+}
+
+function failureHandler(o) { 
+	document.getElementById('info').innerHTML =
+		o.status + " " + o.statusText
+} 
+</script></body></html>

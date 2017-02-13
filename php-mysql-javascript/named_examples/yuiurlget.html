@@ -1,0 +1,22 @@
+<html><head><title>YUI GET Example</title>
+</head><body><center />
+<h2>Loading a web page into a DIV with YUI</h2>
+<div id='info'>This sentence will be replaced</div>
+<script src="yahoo-min.js"></script> 
+<script src="event-min.js"></script> 
+<script src="connection-min.js"></script> 
+<script>
+url = "yahoo.com"
+callback = { success:successHandler, failure:failureHandler }
+request = YAHOO.util.Connect.asyncRequest('GET',
+	'urlget.php?url=' + url, callback)
+
+function successHandler(o) {
+	document.getElementById('info').innerHTML = o.responseText
+}
+
+function failureHandler(o) { 
+	document.getElementById('info').innerHTML =
+		o.status + " " + o.statusText
+} 
+</script></body></html>
