@@ -1146,7 +1146,7 @@ hr {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 10;
+  padding: 0;
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
@@ -3860,6 +3860,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   list-style: none;
 }
 .nav > li {
+  top: 5px;
   position: relative;
   display: block;
 }
@@ -3871,7 +3872,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eee;
+  background-color: rgb(248, 198, 184);
+  border-radius: 2px;
 }
 .nav > li.disabled > a {
   color: #777;
