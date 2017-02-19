@@ -1,0 +1,126 @@
+ /*holy gray layout 적용 시작점*/
+    *{
+      box-sizing: border-box;
+	  list-style: none;
+ 	  text-decoration: none;
+	  
+    }
+    .container{
+      border:5px solid black;
+    }
+    .container>*{
+      border:5px solid red;
+    }
+    .container>.content>*{
+      border:5px solid green;
+      float:left;
+      padding-bottom:2500px;
+      margin-bottom:-2500px;
+    }
+    .container .content{
+      padding-left:200px;
+      padding-right:150px;
+      overflow: hidden;
+    }
+    .container .content main{
+      width:100%;
+    }
+/* 브라우저가 전체 화면 크기일때 nav가 없어지는 부분 수정 */
+    .container .content nav{
+      width:200px;
+      margin-left: -200px;
+    }
+    .container .content aside{
+      width:150px;
+      margin-right:-150px; 
+    }
+      
+    @media(max-width:599px){
+      .container .content{
+      padding-left:0px;
+      padding-right:0px;
+      overflow: visible;
+    }
+    .container .content>*{
+      float:none;
+      padding-bottom:0px;
+      margin-bottom:0px;
+    }
+    .container .content main{
+      width:100%;
+    }
+    .container .content nav{
+      width:auto;
+      margin-left: 0px;
+    }
+    .container .content aside{
+      width:auto;
+      margin-right:0px; 
+    }
+}  
+    .container footer{
+      clear: both;
+    }
+	 /*holy gray layout 적용 끝점*/
+	  
+/*링크와 관련된 가상클래스 선택자 시작점*/
+/*가상클래스 선택자는 위에 있는 것이 우선순위가 더 높다 */
+	  a:link {
+	  	color: black;
+	  }
+	  a:visited {
+/*visited는 보안상의 문제로 아래 4가지 속성만 사용가능*/
+	  	color: black;
+		background-color: ;
+		border-color: ;
+		outline-color: ;
+	  }
+	  a:hover{  
+	  	color: royalblue;
+	  } 
+	  a:active{
+	  	color: blanchedalmond;
+	  }
+	  a:focus{
+	  	color: snow;		  
+	  }
+/*링크와 관련된 가상클래스 선택자 끝점*/
+/*	  header 좌우 정렬*/  
+	  #left_nav,#to_home{
+		  padding-left: 0px;
+		  border: 1px solid blue;
+		  display: inline-block;
+	  }
+	  #right_nav,#help,#login{
+		  padding-left: 0px;  
+		  border: 1px solid blue;
+		  display: inline-block;
+		  float: right;
+	  }
+/*	main 본문 섹션 css*/
+	  
+	  main>div {
+		  border: 1px solid blue;
+	  	  margin: 5px;
+	  }
+	  #write{
+		  border: 1px solid blue;
+		  margin-right: 5px;
+		  float: right;
+	  }
+/* nav 섹션 css*/ 
+	  nav>ul{
+		  margin: 5px;
+		  border: 1px solid blue;
+	  }
+	  
+/*	  aside css */
+	  aside>div{
+		  border: 1px solid blue;
+		  margin: 5px;
+	  }
+/* footer css*/
+	  footer>div{
+		  border: 1px solid blue;
+		  margin: 5px;
+	  }
