@@ -1,0 +1,21 @@
+<html><head><title>YUI Calendar</title>
+<link rel="stylesheet"
+	type="text/css" href="fonts-min.css" />
+<link rel="stylesheet"
+	type="text/css" href="assets/skins/sam/calendar.css" /> 
+<script src="yahoo-dom-event.js"></script>
+<script src="calendar-min.js"></script>
+</head><body class="yui-skin-sam">
+<div id="cal1Container"></div>
+
+<script>
+YAHOO.namespace("example.calendar");
+YAHOO.example.calendar.init = function() {
+	YAHOO.example.calendar.cal1 =
+		new YAHOO.widget.Calendar("cal1", "cal1Container",
+			{ MULTI_SELECT: true } )
+	YAHOO.example.calendar.cal1.render()
+}
+YAHOO.util.Event.onDOMReady(YAHOO.example.calendar.init)
+</script>
+</body></html>
